@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style>
+        table {
+            width: 100%; /* Set table width to 100% */
+            border-collapse: collapse; /* Collapse border spacing */
+        }
+        th, td {
+            padding: 10px; /* Add padding to cells */
+            text-align: center; /* Align cell content to the left */
+            border: 1px solid #dddddd; /* Add border to cells */
+        }
+        /* Set widths for individual columns */
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 30%; /* Adjust width for first column */
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 40%; /* Adjust width for second column */
+        }
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 30%; /* Adjust width for third column */
+        }
+        /* Style to remove the border around the input field */
+        input[type="text"] {
+            border: none; /* Remove border */
+            outline: none; /* Remove outline */
+            text-align: center;
+        }
+
+        
+    </style>
+    </style>
+    <style>
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #f093fb;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to bottom right, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1))
+        }
+
+        .card-registration .select-input.form-control[readonly]:not([disabled]) {
+        font-size: 1rem;
+        line-height: 2.15;
+        padding-left: .75em;
+        padding-right: .75em;
+        }
+        .card-registration .select-arrow {
+        top: 13px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hospital_1</h1>
+    <form method="post" action="">  <!-- Replace 'submit_form_url' with your actual URL name -->
+        {% csrf_token %}
+
+        <!-- ################################################# -->
+        <section class="vh-100 gradient-custom">
+            <div class="container py-5 h-100">
+              <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                  <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+                      <form>
+          
+                        <div class="row">
+                          <div class="col-md-6 mb-4">
+          
+                            <div data-mdb-input-init class="form-outline">
+                              <input type="text" id="firstName" class="form-control form-control-lg" />
+                              <label class="form-label" for="firstName">First Name</label>
+                            </div>
+          
+                          </div>
+                          <div class="col-md-6 mb-4">
+          
+                            <div data-mdb-input-init class="form-outline">
+                              <input type="text" id="lastName" class="form-control form-control-lg" />
+                              <label class="form-label" for="lastName">Last Name</label>
+                            </div>
+          
+                          </div>
+                        </div>
+          
+                        <div class="row">
+                          <div class="col-md-6 mb-4 d-flex align-items-center">
+          
+                            <div data-mdb-input-init class="form-outline datepicker w-100">
+                              <input type="text" class="form-control form-control-lg" id="birthdayDate" />
+                              <label for="birthdayDate" class="form-label">Birthday</label>
+                            </div>
+          
+                          </div>
+                          <div class="col-md-6 mb-4">
+          
+                            <h6 class="mb-2 pb-1">Gender: </h6>
+          
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                                value="option1" checked />
+                              <label class="form-check-label" for="femaleGender">Female</label>
+                            </div>
+          
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                                value="option2" />
+                              <label class="form-check-label" for="maleGender">Male</label>
+                            </div>
+          
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                                value="option3" />
+                              <label class="form-check-label" for="otherGender">Other</label>
+                            </div>
+          
+                          </div>
+                        </div>
+          
+                        <div class="row">
+                          <div class="col-md-6 mb-4 pb-2">
+          
+                            <div data-mdb-input-init class="form-outline">
+                              <input type="email" id="emailAddress" class="form-control form-control-lg" />
+                              <label class="form-label" for="emailAddress">Email</label>
+                            </div>
+          
+                          </div>
+                          <div class="col-md-6 mb-4 pb-2">
+          
+                            <div data-mdb-input-init class="form-outline">
+                              <input type="tel" id="phoneNumber" class="form-control form-control-lg" />
+                              <label class="form-label" for="phoneNumber">Phone Number</label>
+                            </div>
+          
+                          </div>
+                        </div>
+          
+                        <div class="row">
+                          <div class="col-12">
+          
+                            <select class="select form-control-lg">
+                              <option value="1" disabled>Choose option</option>
+                              <option value="2">Subject 1</option>
+                              <option value="3">Subject 2</option>
+                              <option value="4">Subject 3</option>
+                            </select>
+                            <label class="form-label select-label">Choose option</label>
+          
+                          </div>
+                        </div>
+          
+                        <div class="mt-4 pt-2">
+                          <input data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                        </div>
+          
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        
+        <!-- ################################################### -->
+        <!-- Form to Add Patient -->
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <br><br>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <h2>Patient registration form</h2>
+            
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="Patient_name">Patient name</label>
+                    <input type="text" placeholder="Enter Patient_name" name="patientname" id="patientname">
+                </span>
+            </div>
+            
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="disease"> disease</label>
+                    <input type="text" placeholder="Enter disease_name" name="diseasename" id="diseasename">
+                </span>
+            </div>
+
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="age"> age</label>
+                    <input type="text" placeholder="Enter age" name="age" id="age">
+                </span>
+            </div>
+
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="weight"> weight</label>
+                    <input type="text" placeholder="Enter weight" name="weight" id="weight">
+                </span>
+            </div>
+
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="gender"> gender</label>
+                    <input type="text" placeholder="Enter gender" name="gender" id="gender">
+                </span>
+            </div>
+            
+            <button type="submit" name="action" value="add_patient">Patient_submit</button>
+        </form>
+
+        <!-- Form to Add Doctor -->
+        <div class="background">
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <br><br>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <h2>Doctor Registration form</h2>
+            
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="doctor_name">Doctor name</label>
+                    <input type="text" placeholder="Enter Doctor_name" name="doctorname" id="doctorname">
+                </span>
+            </div>
+            
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="specialization"> specialization</label>
+                    <input type="text" placeholder="Enter specialization" name="specializationname" id="specializationname">
+                </span>
+            </div>
+
+            <div class="form-group" style="width:50%;">
+                <span class="input-box">
+                    <label for="qualification"> qualification</label>
+                    <input type="text" placeholder="Enter qualification" name="qualification" id="qualification">
+                </span>
+            </div>
+            
+            <button type="submit" name="action" value="add_doctor">Doctor_submit</button>
+        </form>
+         
+        <!-- Table for Patients -->
+        <h2>Patient list</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Patient Name</th>
+                <th>Disease</th>
+                <th>Age</th>
+                <th>weight</th>
+                <th>Gender</th>
+            </tr>
+            {% for patient in model1 %}  <!-- Assuming 'patients' is passed from the view -->
+                {% if patient.patient_Name != None %}
+                    <tr>
+                        <td>{{ patient.patient_Name }}</td>
+                        <td>{{ patient.Disease }}</td>
+                        <td>{{ patient.age}}</td>
+                        <td>{{ patient.weight}}</td>
+                        <td>{{ patient.gender}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        
+
+        <!-- Table for Doctors -->
+        <h2>Doctort list</h2>
+        <br>
+        <table>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Specilization</th>
+                <th>qualification</th>
+        </tr>
+            {% for doctor in model1 %}  <!-- Assuming 'doctors' is passed from the view -->
+                {% if doctor.doctor_Name != None %}   
+                    <tr>
+                        <td>{{ doctor.doctor_Name }}</td>
+                        <td>{{ doctor.specilization }}</td>
+                        <td>{{ doctor.qualification }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+       
+</body>
